@@ -1,3 +1,4 @@
+name: Download and graph CAD/USD rates
 on:
   schedule:
     - cron: '8 23 * * *' # run at 7:08 pm Toronto time
