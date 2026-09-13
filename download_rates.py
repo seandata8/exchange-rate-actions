@@ -48,6 +48,7 @@ ax.text(
     transform=ax.transAxes,
     ha="right",
     va="top",
+    bbox=dict(facecolor="white", edgecolor="grey", alpha=0.8)
 )
 fig.autofmt_xdate()
 fig.savefig(PNG, dpi=150, bbox_inches="tight")
