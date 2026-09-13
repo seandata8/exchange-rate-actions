@@ -40,5 +40,14 @@ sns.lineplot(x=recent["date"], y=recent["rate"], ax=ax)
 ax.set_title("USD/CAD, last 60 observations")
 ax.set_ylabel("CAD per USD")
 ax.grid(True, alpha=0.3)
+latest = recent.iloc[-1]
+ax.text(
+    0.98,
+    0.95,
+    f"latest: {latest['date']:%Y-%m-%d}={latest['rate']:.4f}",
+    transform=ax.transAxes,
+    ha="right",
+    va="top",
+)
 fig.autofmt_xdate()
 fig.savefig(PNG, dpi=150, bbox_inches="tight")
