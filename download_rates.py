@@ -3,7 +3,9 @@ from pathlib import Path
 import matplotlib
 import pandas as pd
 import requests
+import seaborn as sns
 
+sns.set_theme(style="whitegrid")
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
@@ -34,8 +36,9 @@ recent = new.tail(60).copy()
 recent["date"] = pd.to_datetime(recent["date"])
 
 fig, ax = plt.subplots(figsize=(10, 5))
-ax.plot(recent["date"], recent["rate"])
+sns.lineplot(x=recent["date"], y=recent["rate"], ax=ax)
 ax.set_title("USD/CAD, last 60 observations")
 ax.set_ylabel("CAD per USD")
+ax.grid(True, alpha=0.3)
 fig.autofmt_xdate()
 fig.savefig(PNG, dpi=150, bbox_inches="tight")
