@@ -1,6 +1,8 @@
 on:
   schedule:
     - cron: '8 23 * * *' # run at 7:08 pm Toronto time
+  workflow-dispatch:
+
 jobs:
   download_rates:
     name: Download rates from Bank of Canada Valet API
