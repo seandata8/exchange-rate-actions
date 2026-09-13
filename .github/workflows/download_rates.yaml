@@ -1,7 +1,7 @@
 on:
   schedule:
     - cron: '8 23 * * *' # run at 7:08 pm Toronto time
-  workflow-dispatch:
+  workflow_dispatch:
 
 jobs:
   download_rates:
