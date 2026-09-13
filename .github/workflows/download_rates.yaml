@@ -1,3 +1,14 @@
 on:
   schedule:
     - cron: '8 23 * * *' # run at 7:08 pm Toronto time
+jobs:
+  download_rates:
+    name: Download rates from Bank of Canada Valet API
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: astral-sh/setup-uv@v6
+      with:
+        enable-cache: true
+      - run: uv sync
+      - run: uv run download_rates.py
