@@ -1,0 +1,19 @@
+[project]
+name = "exchange-rate-actions"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Sean Murphy", email = "seandata8@gmail.com" }
+]
+requires-python = ">=3.14"
+dependencies = [
+    "requests>=2.34.2",
+]
+
+[project.scripts]
+exchange-rate-actions = "exchange_rate_actions:main"
+
+[build-system]
+requires = ["uv_build>=0.12.11,<0.13.0"]
+build-backend = "uv_build"
